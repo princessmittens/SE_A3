@@ -1,0 +1,28 @@
+{
+  "rules": {
+    ".read": true,
+    ".write": true,
+    "contacts": {
+      "$contact": {
+        "name": {
+          ".validate": "newData.isString() && newData.val().length >= 2 && newData.val().length <= 48"
+        },
+        "primaryBus": {
+          ".validate": "newData.isString() && (newData.val() === 'Fish Monger' || newData.val() === 'Distributor' || newData.val() === 'Fisher'|| newData.val() === 'Processor')"
+        },
+        "address": {
+          ".validate": "newData.val().length < 50"
+        },
+        "province": {
+          ".validate": "newData.val() === 'NS' || newData.val() === 'AB' || newData.val() === 'BC' || newData.val() === 'NB' || newData.val() === 'NS' || newData.val() === 'NL' || newData.val() === 'NT' || newData.val() === 'NU' || newData.val() === 'ON' || newData.val() === 'PE' || newData.val() === 'QC' || newData.val() === 'SK' || newData.val() === 'YT' || newData.val() === ''"
+        },
+        "number": {
+          ".validate": "newData.val().length == 9"
+        },
+        "email": {
+          ".validate": "newData.isString() && newData.val().matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$/i)"
+        }
+      }
+    }
+  }
+}
